@@ -160,7 +160,5 @@ namespace WinFormsApp1
                 wordCount--;
             noOfParticipantsTextbox.Text = "Participants:" + wordCount;
         }
-
-
     }
 }

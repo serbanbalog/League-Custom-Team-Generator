@@ -95,11 +95,11 @@
             blueTeamTextbox.BackColor = SystemColors.MenuHighlight;
             blueTeamTextbox.BorderStyle = BorderStyle.FixedSingle;
             blueTeamTextbox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point,  0);
-            blueTeamTextbox.Location = new Point(284, 48);
+            blueTeamTextbox.Location = new Point(261, 44);
             blueTeamTextbox.Multiline = true;
             blueTeamTextbox.Name = "blueTeamTextbox";
             blueTeamTextbox.ReadOnly = true;
-            blueTeamTextbox.Size = new Size(145, 224);
+            blueTeamTextbox.Size = new Size(145, 228);
             blueTeamTextbox.TabIndex = 8;
             // 
             // redTeamTextbox
@@ -107,16 +107,17 @@
             redTeamTextbox.BackColor = Color.Red;
             redTeamTextbox.BorderStyle = BorderStyle.FixedSingle;
             redTeamTextbox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point,  0);
-            redTeamTextbox.Location = new Point(454, 48);
+            redTeamTextbox.Location = new Point(431, 44);
             redTeamTextbox.Multiline = true;
             redTeamTextbox.Name = "redTeamTextbox";
             redTeamTextbox.ReadOnly = true;
-            redTeamTextbox.Size = new Size(145, 224);
+            redTeamTextbox.Size = new Size(145, 228);
             redTeamTextbox.TabIndex = 9;
             // 
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
             textBox2.Location = new Point(12, 18);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -129,7 +130,8 @@
             // 
             textBox3.BackColor = SystemColors.MenuHighlight;
             textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(284, 19);
+            textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox3.Location = new Point(261, 15);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(145, 23);
@@ -141,7 +143,8 @@
             // 
             textBox6.BackColor = Color.Red;
             textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Location = new Point(454, 19);
+            textBox6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox6.Location = new Point(431, 15);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.Size = new Size(145, 23);
@@ -188,13 +191,15 @@
             // 
             // championBtn
             // 
+            championBtn.BackColor = Color.FromArgb(  128,   255,   128);
+            championBtn.FlatStyle = FlatStyle.Popup;
             championBtn.Location = new Point(647, 126);
             championBtn.Name = "championBtn";
             championBtn.RightToLeft = RightToLeft.No;
             championBtn.Size = new Size(145, 31);
             championBtn.TabIndex = 19;
             championBtn.Text = "Generate Champion";
-            championBtn.UseVisualStyleBackColor = true;
+            championBtn.UseVisualStyleBackColor = false;
             championBtn.Click += championBtn_Click;
             // 
             // randomChampionResultTextbox
@@ -244,13 +249,15 @@
             // 
             // generateRoleBtn
             // 
+            generateRoleBtn.BackColor = Color.FromArgb(  255,   255,   128);
+            generateRoleBtn.FlatStyle = FlatStyle.Popup;
             generateRoleBtn.Location = new Point(647, 241);
             generateRoleBtn.Name = "generateRoleBtn";
             generateRoleBtn.RightToLeft = RightToLeft.No;
             generateRoleBtn.Size = new Size(145, 31);
             generateRoleBtn.TabIndex = 25;
             generateRoleBtn.Text = "Generate Role";
-            generateRoleBtn.UseVisualStyleBackColor = true;
+            generateRoleBtn.UseVisualStyleBackColor = false;
             generateRoleBtn.Click += generateRoleBtn_Click;
             // 
             // Form1
