@@ -175,7 +175,6 @@
             roleSelectionBox.Size = new Size(145, 23);
             roleSelectionBox.TabIndex = 17;
             roleSelectionBox.Text = "Select Role";
-            roleSelectionBox.SelectionChangeCommitted += roleSelectionBox_SelectionChangeCommitted;
             // 
             // textBox4
             // 
