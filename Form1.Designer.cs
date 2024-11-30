@@ -206,7 +206,7 @@
             // 
             randomChampionResultTextbox.BackColor = Color.FromArgb(  128,   255,   128);
             randomChampionResultTextbox.BorderStyle = BorderStyle.FixedSingle;
-            randomChampionResultTextbox.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            randomChampionResultTextbox.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point,  0);
             randomChampionResultTextbox.Location = new Point(647, 77);
             randomChampionResultTextbox.Multiline = true;
             randomChampionResultTextbox.Name = "randomChampionResultTextbox";
