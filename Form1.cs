@@ -55,6 +55,11 @@ namespace WinFormsApp1
             WriteTeamsIntoTextboxes();
         }
 
+        private void generateRoleBtn_Click(object sender, EventArgs e)
+        {
+            rndRoleTextbox.Text = roleNames[_rnd.Next(roleNames.Length - 1)];
+        }
+
         private void ClearTeams()
         {
             blueTeamTextbox.Text = "";
@@ -70,8 +75,8 @@ namespace WinFormsApp1
         private void SplitParticipantsIntoTeams()
         {
             var participants = textBox1.Text.Split("\r").OrderBy(_ => _rnd.Next()).ToList<string>();
-            _blueTeam = participants.Slice(0, participants.Count/2);
-            _redTeam = participants.Slice(participants.Count / 2, participants.Count/2);
+            _blueTeam = participants.Slice(0, participants.Count / 2);
+            _redTeam = participants.Slice(participants.Count / 2, participants.Count / 2);
         }
 
         private void WriteTeamsIntoTextboxes()
@@ -94,6 +99,7 @@ namespace WinFormsApp1
                 _redTeam[i] += " - " + roleNames[i];
             }
         }
+
 
         private void AddRoleAndChampionToEachParticipant()
         {
@@ -149,7 +155,12 @@ namespace WinFormsApp1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var words = textBox1.Text.Split("\r");
-            noOfParticipantsTextbox.Text = "Participants:" + words.Length.ToString();
+            var wordCount = words.Length;
+            if (words[words.Length - 1] == "\n" || words[words.Length - 1] == "")
+                wordCount--;
+            noOfParticipantsTextbox.Text = "Participants:" + wordCount;
         }
+
+
     }
 }
