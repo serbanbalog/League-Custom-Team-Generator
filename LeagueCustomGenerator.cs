@@ -1,31 +1,22 @@
 using System.Data;
-using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
-using System.Security.Policy;
-using System;
-using System.Windows.Forms.VisualStyles;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Configuration;
-using System.Linq;
 
 namespace WinFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class LeagueCustomGenerator : Form
     {
         Random _rnd = new Random();
         List<string> _blueTeam, _redTeam, _redTeamChampionPool, _blueTeamChampionPool;
         List<string> _topChampions = new() { "Aatrox", "Ambessa", "Camille", "Cho'Gath", "Darius", "Dr. Mundo", "Fiora", "Gangplank", "Garen", "Gnar", "Gragas", "Gwen", "Illaoi", "Irelia", "Jax", "Jayce", "K'Sante", "Kayle", "Kennen", "Kled", "Malphite", "Mordekaiser", "Nasus", "Olaf", "Ornn", "Pantheon", "Poppy", "Quinn", "Renekton", "Riven", "Rumble", "Sett", "Shen", "Singed", "Sion", "Skarner", "Sylas", "Tahm Kench", "Teemo", "Trundle", "Tryndamere", "Udyr", "Urgot", "Vayne", "Vladimir", "Volibear", "Warwick", "Wukong", "Yasuo", "Yone", "Yorick" };
         List<string> _jungleChampions = new() { "Amumu", "Bel'Veth", "Brand", "Briar", "Diana", "Ekko", "Elise", "Evelynn", "Fiddlesticks", "Gragas", "Graves", "Hecarim", "Ivern", "Jarvan IV", "Jax", "Karthus", "Kayn", "Kha'Zix", "Kindred", "Lee Sin", "Lillia", "Maokai", "Master Yi", "Nidalee", "Nocturne", "Nunu", "Pantheon", "Poppy", "Rammus", "Rek'Sai", "Rengar", "Sejuani", "Shaco", "Shyvana", "Skarner", "Taliyah", "Talon", "Teemo", "Trundle", "Udyr", "Vi", "Viego", "Volibear", "Warwick", "Wukong", "Xin Zhao", "Zac" };
         List<string> _midChampions = new() { "Ahri", "Akali", "Akshan", "Anivia", "Annie", "Aurelion Sol", "Aurora", "Azir", "Brand", "Cassiopeia", "Corki", "Diana", "Ekko", "Fizz", "Galio", "Gragas", "Heimerdinger", "Hwei", "Irelia", "Jayce", "Karma", "Kassadin", "Katarina", "LeBlanc", "Lissandra", "Lux", "Malphite", "Malzahar", "Naafiri", "Neeko", "Orianna", "Pantheon", "Qiyana", "Rumble", "Ryze", "Swain", "Sylas", "Syndra", "Taliyah", "Talon", "Taric", "Tristana", "Twisted Fate", "Veigar", "Vel'Koz", "Vex", "Viktor", "Vladimir", "Xerath", "Yasuo", "Yone", "Zed", "Ziggs", "Zoe" };
-        List<string> _adcChampions = new() { "Aphelios", "Ashe", "Caitlyn", "Draven", "Ezreal", "Jhin", "Jinx", "Kai'Sa", "Kalista", "Karthus", "Kog'Maw", "Lucian", "Miss Fortune", "Nilah", "Samira", "Senna", "Sivir", "Smolder", "Tristana", "Twitch", "Varus", "Vayne", "Xayah", "Zeri" };
+        List<string> _adcChampions = new() { "Aphelios", "Ashe", "Caitlyn", "Draven", "Ezreal", "Jhin", "Jinx", "Kai'Sa", "Kalista", "Kog'Maw", "Lucian", "Miss Fortune", "Nilah", "Samira", "Senna", "Sivir", "Smolder", "Tristana", "Twitch", "Varus", "Vayne", "Xayah", "Zeri" };
         List<string> _supportChampions = new() { "Alistar", "Annie", "Bard", "Blitzcrank", "Brand", "Braum", "Janna", "Karma", "Leona", "Lulu", "Lux", "Malphite", "Maokai", "Milio", "Morgana", "Nami", "Nautilus", "Neeko", "Pantheon", "Pyke", "Rakan", "Rell", "Renata Glasc", "Senna", "Seraphine", "Sona", "Soraka", "Swain", "Tahm Kench", "Taric", "Thresh", "Vel'Koz", "Xerath", "Yuumi", "Zilean", "Zyra" };
         Dictionary<int, List<string>> _indexedChampionsByRole;
         string[] roleNames = { "Top", "Jungle", "Mid", "ADC", "Supp" };
         bool _isMirrorMatchupEnabled = false;
         string _selectedRoleForChampionReroll;
 
-        public Form1()
+        public LeagueCustomGenerator()
         {
             InitializeComponent();
             _indexedChampionsByRole = new Dictionary<int, List<string>> { { 0, _topChampions }, { 1, _jungleChampions }, { 2, _midChampions }, { 3, _adcChampions }, { 4, _supportChampions } };
@@ -77,6 +68,12 @@ namespace WinFormsApp1
             rndRoleTextbox.Text = roleNames[_rnd.Next(roleNames.Length - 1)];
         }
 
+        private void championBtn_Click(object sender, EventArgs e)
+        {
+            if (roleSelectionBox.Text != "")
+                GenerateChampionBasedOnRole();
+        }
+
         private void ClearTeams()
         {
             blueTeamTextbox.Text = "";
@@ -88,16 +85,10 @@ namespace WinFormsApp1
             _blueTeamChampionPool.Clear();
             _redTeamChampionPool.Clear();
         }
-
-        private void championBtn_Click(object sender, EventArgs e)
-        {
-            if (_selectedRoleForChampionReroll != null && _selectedRoleForChampionReroll != "")
-                GenerateChampionBasedOnRole();
-        }
-
+       
         private void SplitParticipantsIntoTeams()
         {
-            var participants = textBox1.Text.Split("\r").OrderBy(_ => _rnd.Next()).ToList<string>();
+            var participants = textBox1.Text.Split("\r\n").OrderBy(_ => _rnd.Next()).ToList<string>();
             _blueTeam = participants.Slice(0, participants.Count / 2);
             _redTeam = participants.Slice(participants.Count / 2, participants.Count / 2);
         }
@@ -181,7 +172,7 @@ namespace WinFormsApp1
         {
             var champion = champions[_rnd.Next(champions.Count - 1)];
 
-            if (listToCheck.Contains(champion))
+            while(listToCheck.Contains(champion))
                 champion = champions[_rnd.Next(champions.Count - 1)];
 
             return champion;
@@ -222,6 +213,5 @@ namespace WinFormsApp1
                 wordCount--;
             noOfParticipantsTextbox.Text = "Participants:" + wordCount;
         }
-
     }
 }
