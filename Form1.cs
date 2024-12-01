@@ -14,7 +14,7 @@ namespace WinFormsApp1
     public partial class Form1 : Form
     {
         Random _rnd = new Random();
-        List<string> _blueTeam, _redTeam;
+        List<string> _blueTeam, _redTeam, _redTeamChampionPool, _blueTeamChampionPool;
         List<string> _topChampions = new() { "Aatrox", "Ambessa", "Camille", "Cho'Gath", "Darius", "Dr. Mundo", "Fiora", "Gangplank", "Garen", "Gnar", "Gragas", "Gwen", "Illaoi", "Irelia", "Jax", "Jayce", "K'Sante", "Kayle", "Kennen", "Kled", "Malphite", "Mordekaiser", "Nasus", "Olaf", "Ornn", "Pantheon", "Poppy", "Quinn", "Renekton", "Riven", "Rumble", "Sett", "Shen", "Singed", "Sion", "Skarner", "Sylas", "Tahm Kench", "Teemo", "Trundle", "Tryndamere", "Udyr", "Urgot", "Vayne", "Vladimir", "Volibear", "Warwick", "Wukong", "Yasuo", "Yone", "Yorick" };
         List<string> _jungleChampions = new() { "Amumu", "Bel'Veth", "Brand", "Briar", "Diana", "Ekko", "Elise", "Evelynn", "Fiddlesticks", "Gragas", "Graves", "Hecarim", "Ivern", "Jarvan IV", "Jax", "Karthus", "Kayn", "Kha'Zix", "Kindred", "Lee Sin", "Lillia", "Maokai", "Master Yi", "Nidalee", "Nocturne", "Nunu", "Pantheon", "Poppy", "Rammus", "Rek'Sai", "Rengar", "Sejuani", "Shaco", "Shyvana", "Skarner", "Taliyah", "Talon", "Teemo", "Trundle", "Udyr", "Vi", "Viego", "Volibear", "Warwick", "Wukong", "Xin Zhao", "Zac" };
         List<string> _midChampions = new() { "Ahri", "Akali", "Akshan", "Anivia", "Annie", "Aurelion Sol", "Aurora", "Azir", "Brand", "Cassiopeia", "Corki", "Diana", "Ekko", "Fizz", "Galio", "Gragas", "Heimerdinger", "Hwei", "Irelia", "Jayce", "Karma", "Kassadin", "Katarina", "LeBlanc", "Lissandra", "Lux", "Malphite", "Malzahar", "Naafiri", "Neeko", "Orianna", "Pantheon", "Qiyana", "Rumble", "Ryze", "Swain", "Sylas", "Syndra", "Taliyah", "Talon", "Taric", "Tristana", "Twisted Fate", "Veigar", "Vel'Koz", "Vex", "Viktor", "Vladimir", "Xerath", "Yasuo", "Yone", "Zed", "Ziggs", "Zoe" };
@@ -32,6 +32,8 @@ namespace WinFormsApp1
             roleSelectionBox.Items.AddRange(roleNames);
             _blueTeam = new();
             _redTeam = new();
+            _redTeamChampionPool = new();
+            _blueTeamChampionPool = new();
             _selectedRoleForChampionReroll = "";
         }
 
@@ -58,6 +60,18 @@ namespace WinFormsApp1
             WriteTeamsIntoTextboxes();
         }
 
+
+        private void teamAndChampionBtn_Click(object sender, EventArgs e)
+        {
+            ClearTeams();
+            ClearChampionPools();
+            SplitParticipantsIntoTeams();
+            CreateChampionPoolForEachTeam();
+            WriteTeamsIntoTextboxes();
+            WriteChampionPoolForTeam();
+        }
+
+
         private void generateRoleBtn_Click(object sender, EventArgs e)
         {
             rndRoleTextbox.Text = roleNames[_rnd.Next(roleNames.Length - 1)];
@@ -67,6 +81,12 @@ namespace WinFormsApp1
         {
             blueTeamTextbox.Text = "";
             redTeamTextbox.Text = "";
+        }
+
+        private void ClearChampionPools()
+        {
+            _blueTeamChampionPool.Clear();
+            _redTeamChampionPool.Clear();
         }
 
         private void championBtn_Click(object sender, EventArgs e)
@@ -84,13 +104,27 @@ namespace WinFormsApp1
 
         private void WriteTeamsIntoTextboxes()
         {
-            foreach (var team in _blueTeam)
+            foreach (var participant in _blueTeam)
             {
-                blueTeamTextbox.Text += team.ToString() + "\r\n";
+                blueTeamTextbox.Text += participant.ToString() + "\r\n";
             }
-            foreach (var team in _redTeam)
+            foreach (var participant in _redTeam)
             {
-                redTeamTextbox.Text += team.ToString() + "\r\n";
+                redTeamTextbox.Text += participant.ToString() + "\r\n";
+            }
+        }
+
+        private void WriteChampionPoolForTeam()
+        {
+            blueTeamTextbox.Text += "\r\nChampions: \r\n";
+            foreach (var champion in _blueTeamChampionPool)
+            {
+                blueTeamTextbox.Text += champion.ToString() + "\r\n";
+            }
+            redTeamTextbox.Text += "\r\nChampions: \r\n";
+            foreach (var champion in _redTeamChampionPool)
+            {
+                redTeamTextbox.Text += champion.ToString() + "\r\n";
             }
         }
 
@@ -98,8 +132,8 @@ namespace WinFormsApp1
         {
             for (int i = 0; i < roleNames.Length; i++)
             {
-                _blueTeam[i] += " - " + roleNames[i];
-                _redTeam[i] += " - " + roleNames[i];
+                _blueTeam[i] += "-" + roleNames[i];
+                _redTeam[i] += "-" + roleNames[i];
             }
         }
 
@@ -112,22 +146,42 @@ namespace WinFormsApp1
                 if (champions != null)
                 {
                     var blueTeamChampion = GetRandomChampionFromList(_blueTeam, champions);
-                    _blueTeam[i] += " - " + roleNames[i] + " - " + blueTeamChampion;
-                    
+                    _blueTeam[i] += "-" + roleNames[i] + "-" + blueTeamChampion;
+
                     var redTeamChampion = GetRandomChampionFromList(_redTeam, champions);
                     if (!_isMirrorMatchupEnabled)
                         while (redTeamChampion == blueTeamChampion)
                             redTeamChampion = GetRandomChampionFromList(_redTeam, champions);
-                    _redTeam[i] += " - " + roleNames[i] + " - " + redTeamChampion;
+                    _redTeam[i] += "-" + roleNames[i] + "-" + redTeamChampion;
                 }
             }
         }
 
-        private string GetRandomChampionFromList(List<string> team, List<string> champions)
+        private void CreateChampionPoolForEachTeam()
+        {
+            for (int i = 0; i < roleNames.Length; i++)
+            {
+                _indexedChampionsByRole.TryGetValue(i, out var champions);
+                if (champions != null)
+                {
+                    var blueTeamChampion = GetRandomChampionFromList(_blueTeamChampionPool, champions);
+                    _blueTeamChampionPool.Add(blueTeamChampion);
+
+                    var redTeamChampion = GetRandomChampionFromList(_redTeamChampionPool, champions);
+                    if (!_isMirrorMatchupEnabled)
+                        while (redTeamChampion == blueTeamChampion)
+                            redTeamChampion = GetRandomChampionFromList(_redTeamChampionPool, champions);
+                    _redTeamChampionPool.Add(redTeamChampion);
+
+                }
+            }
+        }
+
+        private string GetRandomChampionFromList(List<string> listToCheck, List<string> champions)
         {
             var champion = champions[_rnd.Next(champions.Count - 1)];
 
-            if(team.Contains(champion))
+            if (listToCheck.Contains(champion))
                 champion = champions[_rnd.Next(champions.Count - 1)];
 
             return champion;
@@ -168,5 +222,6 @@ namespace WinFormsApp1
                 wordCount--;
             noOfParticipantsTextbox.Text = "Participants:" + wordCount;
         }
+
     }
 }

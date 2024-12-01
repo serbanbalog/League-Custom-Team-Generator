@@ -47,46 +47,48 @@
             textBox5 = new TextBox();
             rndRoleTextbox = new TextBox();
             generateRoleBtn = new Button();
+            randomTeamAndChapmionBtn = new Button();
             SuspendLayout();
             // 
             // teamRoleAndChampBtn
             // 
             teamRoleAndChampBtn.BackColor = Color.Transparent;
-            teamRoleAndChampBtn.Location = new Point(329, 390);
+            teamRoleAndChampBtn.Location = new Point(612, 526);
             teamRoleAndChampBtn.Name = "teamRoleAndChampBtn";
             teamRoleAndChampBtn.Size = new Size(126, 49);
             teamRoleAndChampBtn.TabIndex = 2;
-            teamRoleAndChampBtn.Text = "Echipa + Rol + Campion";
+            teamRoleAndChampBtn.Text = "Team + Role + Champion";
             teamRoleAndChampBtn.UseVisualStyleBackColor = false;
             teamRoleAndChampBtn.Click += teamRoleAndChampBtn_Click;
             // 
             // teamBtn
             // 
-            teamBtn.Location = new Point(65, 390);
+            teamBtn.Location = new Point(216, 526);
             teamBtn.Name = "teamBtn";
             teamBtn.Size = new Size(126, 49);
             teamBtn.TabIndex = 3;
-            teamBtn.Text = "Echipa";
+            teamBtn.Text = "Team";
             teamBtn.UseVisualStyleBackColor = true;
             teamBtn.Click += teamBtn_Click;
             // 
             // teamAndRoleBtn
             // 
             teamAndRoleBtn.BackColor = Color.Transparent;
-            teamAndRoleBtn.Location = new Point(197, 390);
+            teamAndRoleBtn.Location = new Point(348, 526);
             teamAndRoleBtn.Name = "teamAndRoleBtn";
             teamAndRoleBtn.Size = new Size(126, 49);
             teamAndRoleBtn.TabIndex = 4;
-            teamAndRoleBtn.Text = "Echipa + Rol";
+            teamAndRoleBtn.Text = "Team + Role";
             teamAndRoleBtn.UseVisualStyleBackColor = false;
             teamAndRoleBtn.Click += teamAndRoleBtn_Click;
             // 
             // textBox1
             // 
+            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point,  0);
             textBox1.Location = new Point(12, 47);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(145, 225);
+            textBox1.Size = new Size(145, 354);
             textBox1.TabIndex = 5;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -94,24 +96,24 @@
             // 
             blueTeamTextbox.BackColor = SystemColors.MenuHighlight;
             blueTeamTextbox.BorderStyle = BorderStyle.FixedSingle;
-            blueTeamTextbox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point,  0);
-            blueTeamTextbox.Location = new Point(261, 44);
+            blueTeamTextbox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            blueTeamTextbox.Location = new Point(188, 48);
             blueTeamTextbox.Multiline = true;
             blueTeamTextbox.Name = "blueTeamTextbox";
             blueTeamTextbox.ReadOnly = true;
-            blueTeamTextbox.Size = new Size(145, 228);
+            blueTeamTextbox.Size = new Size(279, 354);
             blueTeamTextbox.TabIndex = 8;
             // 
             // redTeamTextbox
             // 
             redTeamTextbox.BackColor = Color.Red;
             redTeamTextbox.BorderStyle = BorderStyle.FixedSingle;
-            redTeamTextbox.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point,  0);
-            redTeamTextbox.Location = new Point(431, 44);
+            redTeamTextbox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            redTeamTextbox.Location = new Point(500, 48);
             redTeamTextbox.Multiline = true;
             redTeamTextbox.Name = "redTeamTextbox";
             redTeamTextbox.ReadOnly = true;
-            redTeamTextbox.Size = new Size(145, 228);
+            redTeamTextbox.Size = new Size(279, 354);
             redTeamTextbox.TabIndex = 9;
             // 
             // textBox2
@@ -131,10 +133,10 @@
             textBox3.BackColor = SystemColors.MenuHighlight;
             textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
-            textBox3.Location = new Point(261, 15);
+            textBox3.Location = new Point(188, 15);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
-            textBox3.Size = new Size(145, 23);
+            textBox3.Size = new Size(279, 23);
             textBox3.TabIndex = 12;
             textBox3.Text = "Blue Team";
             textBox3.TextAlign = HorizontalAlignment.Center;
@@ -144,10 +146,10 @@
             textBox6.BackColor = Color.Red;
             textBox6.BorderStyle = BorderStyle.FixedSingle;
             textBox6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
-            textBox6.Location = new Point(431, 15);
+            textBox6.Location = new Point(500, 15);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
-            textBox6.Size = new Size(145, 23);
+            textBox6.Size = new Size(279, 23);
             textBox6.TabIndex = 13;
             textBox6.Text = "Red Team";
             textBox6.TextAlign = HorizontalAlignment.Center;
@@ -157,7 +159,7 @@
             mirrorMatchupCheckBox.AutoSize = true;
             mirrorMatchupCheckBox.BackColor = Color.Transparent;
             mirrorMatchupCheckBox.ForeColor = SystemColors.ButtonFace;
-            mirrorMatchupCheckBox.Location = new Point(461, 406);
+            mirrorMatchupCheckBox.Location = new Point(551, 581);
             mirrorMatchupCheckBox.Name = "mirrorMatchupCheckBox";
             mirrorMatchupCheckBox.Size = new Size(115, 19);
             mirrorMatchupCheckBox.TabIndex = 14;
@@ -170,7 +172,7 @@
             roleSelectionBox.BackColor = Color.FromArgb(  128,   255,   128);
             roleSelectionBox.FlatStyle = FlatStyle.Flat;
             roleSelectionBox.FormattingEnabled = true;
-            roleSelectionBox.Location = new Point(647, 48);
+            roleSelectionBox.Location = new Point(809, 89);
             roleSelectionBox.Name = "roleSelectionBox";
             roleSelectionBox.Size = new Size(145, 23);
             roleSelectionBox.TabIndex = 17;
@@ -180,19 +182,20 @@
             // 
             textBox4.BackColor = Color.FromArgb(  128,   255,   128);
             textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Location = new Point(647, 19);
+            textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox4.Location = new Point(809, 60);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.Size = new Size(145, 23);
             textBox4.TabIndex = 18;
-            textBox4.Text = "Role";
+            textBox4.Text = "Champion by Role";
             textBox4.TextAlign = HorizontalAlignment.Center;
             // 
             // championBtn
             // 
             championBtn.BackColor = Color.FromArgb(  128,   255,   128);
             championBtn.FlatStyle = FlatStyle.Popup;
-            championBtn.Location = new Point(647, 126);
+            championBtn.Location = new Point(809, 167);
             championBtn.Name = "championBtn";
             championBtn.RightToLeft = RightToLeft.No;
             championBtn.Size = new Size(145, 31);
@@ -206,7 +209,7 @@
             randomChampionResultTextbox.BackColor = Color.FromArgb(  128,   255,   128);
             randomChampionResultTextbox.BorderStyle = BorderStyle.FixedSingle;
             randomChampionResultTextbox.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point,  0);
-            randomChampionResultTextbox.Location = new Point(647, 77);
+            randomChampionResultTextbox.Location = new Point(809, 118);
             randomChampionResultTextbox.Multiline = true;
             randomChampionResultTextbox.Name = "randomChampionResultTextbox";
             randomChampionResultTextbox.Size = new Size(145, 43);
@@ -215,7 +218,7 @@
             // 
             // noOfParticipantsTextbox
             // 
-            noOfParticipantsTextbox.Location = new Point(32, 278);
+            noOfParticipantsTextbox.Location = new Point(33, 407);
             noOfParticipantsTextbox.Name = "noOfParticipantsTextbox";
             noOfParticipantsTextbox.Size = new Size(100, 23);
             noOfParticipantsTextbox.TabIndex = 21;
@@ -225,7 +228,8 @@
             // 
             textBox5.BackColor = Color.FromArgb(  255,   255,   128);
             textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Location = new Point(647, 163);
+            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox5.Location = new Point(809, 255);
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
             textBox5.Size = new Size(145, 23);
@@ -238,7 +242,7 @@
             rndRoleTextbox.BackColor = Color.FromArgb(  255,   255,   128);
             rndRoleTextbox.BorderStyle = BorderStyle.FixedSingle;
             rndRoleTextbox.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point,  0);
-            rndRoleTextbox.Location = new Point(647, 192);
+            rndRoleTextbox.Location = new Point(809, 284);
             rndRoleTextbox.Multiline = true;
             rndRoleTextbox.Name = "rndRoleTextbox";
             rndRoleTextbox.ReadOnly = true;
@@ -250,7 +254,7 @@
             // 
             generateRoleBtn.BackColor = Color.FromArgb(  255,   255,   128);
             generateRoleBtn.FlatStyle = FlatStyle.Popup;
-            generateRoleBtn.Location = new Point(647, 241);
+            generateRoleBtn.Location = new Point(809, 333);
             generateRoleBtn.Name = "generateRoleBtn";
             generateRoleBtn.RightToLeft = RightToLeft.No;
             generateRoleBtn.Size = new Size(145, 31);
@@ -259,13 +263,25 @@
             generateRoleBtn.UseVisualStyleBackColor = false;
             generateRoleBtn.Click += generateRoleBtn_Click;
             // 
+            // randomTeamAndChapmionBtn
+            // 
+            randomTeamAndChapmionBtn.BackColor = Color.Transparent;
+            randomTeamAndChapmionBtn.Location = new Point(480, 526);
+            randomTeamAndChapmionBtn.Name = "randomTeamAndChapmionBtn";
+            randomTeamAndChapmionBtn.Size = new Size(126, 49);
+            randomTeamAndChapmionBtn.TabIndex = 26;
+            randomTeamAndChapmionBtn.Text = "Team + Champion";
+            randomTeamAndChapmionBtn.UseVisualStyleBackColor = false;
+            randomTeamAndChapmionBtn.Click += teamAndChampionBtn_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             BackgroundImage = Properties.Resources.League_map;
-            ClientSize = new Size(804, 451);
+            ClientSize = new Size(966, 655);
+            Controls.Add(randomTeamAndChapmionBtn);
             Controls.Add(generateRoleBtn);
             Controls.Add(rndRoleTextbox);
             Controls.Add(textBox5);
@@ -311,5 +327,6 @@
         private TextBox textBox5;
         private TextBox rndRoleTextbox;
         private Button generateRoleBtn;
+        private Button randomTeamAndChapmionBtn;
     }
 }
