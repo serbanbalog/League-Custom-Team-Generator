@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp1
+﻿using LeagueCustomGenerator.Properties;
+
+namespace WinFormsApp1
 {
     partial class LeagueCustomGenerator
     {
@@ -53,7 +55,7 @@
             // teamRoleAndChampBtn
             // 
             teamRoleAndChampBtn.BackColor = Color.Transparent;
-            teamRoleAndChampBtn.Location = new Point(639, 526);
+            teamRoleAndChampBtn.Location = new Point(631, 524);
             teamRoleAndChampBtn.Name = "teamRoleAndChampBtn";
             teamRoleAndChampBtn.Size = new Size(126, 49);
             teamRoleAndChampBtn.TabIndex = 2;
@@ -63,7 +65,7 @@
             // 
             // teamBtn
             // 
-            teamBtn.Location = new Point(243, 526);
+            teamBtn.Location = new Point(235, 524);
             teamBtn.Name = "teamBtn";
             teamBtn.Size = new Size(126, 49);
             teamBtn.TabIndex = 3;
@@ -74,7 +76,7 @@
             // teamAndRoleBtn
             // 
             teamAndRoleBtn.BackColor = Color.Transparent;
-            teamAndRoleBtn.Location = new Point(375, 526);
+            teamAndRoleBtn.Location = new Point(367, 524);
             teamAndRoleBtn.Name = "teamAndRoleBtn";
             teamAndRoleBtn.Size = new Size(126, 49);
             teamAndRoleBtn.TabIndex = 4;
@@ -84,7 +86,7 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point,  0);
+            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 48);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
@@ -96,7 +98,7 @@
             // 
             blueTeamTextbox.BackColor = Color.DeepSkyBlue;
             blueTeamTextbox.BorderStyle = BorderStyle.FixedSingle;
-            blueTeamTextbox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            blueTeamTextbox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             blueTeamTextbox.Location = new Point(188, 48);
             blueTeamTextbox.Multiline = true;
             blueTeamTextbox.Name = "blueTeamTextbox";
@@ -108,7 +110,7 @@
             // 
             redTeamTextbox.BackColor = Color.IndianRed;
             redTeamTextbox.BorderStyle = BorderStyle.FixedSingle;
-            redTeamTextbox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            redTeamTextbox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             redTeamTextbox.Location = new Point(500, 48);
             redTeamTextbox.Multiline = true;
             redTeamTextbox.Name = "redTeamTextbox";
@@ -119,7 +121,7 @@
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(12, 15);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -132,7 +134,7 @@
             // 
             textBox3.BackColor = SystemColors.MenuHighlight;
             textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox3.Location = new Point(188, 15);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
@@ -145,7 +147,7 @@
             // 
             textBox6.BackColor = Color.Red;
             textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox6.Location = new Point(500, 15);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
@@ -159,7 +161,7 @@
             mirrorMatchupCheckBox.AutoSize = true;
             mirrorMatchupCheckBox.BackColor = Color.Transparent;
             mirrorMatchupCheckBox.ForeColor = SystemColors.ButtonFace;
-            mirrorMatchupCheckBox.Location = new Point(578, 581);
+            mirrorMatchupCheckBox.Location = new Point(570, 579);
             mirrorMatchupCheckBox.Name = "mirrorMatchupCheckBox";
             mirrorMatchupCheckBox.Size = new Size(115, 19);
             mirrorMatchupCheckBox.TabIndex = 14;
@@ -169,7 +171,7 @@
             // 
             // roleSelectionBox
             // 
-            roleSelectionBox.BackColor = Color.FromArgb(  128,   255,   128);
+            roleSelectionBox.BackColor = Color.FromArgb(128, 255, 128);
             roleSelectionBox.FlatStyle = FlatStyle.Flat;
             roleSelectionBox.FormattingEnabled = true;
             roleSelectionBox.Location = new Point(809, 85);
@@ -180,9 +182,9 @@
             // 
             // textBox4
             // 
-            textBox4.BackColor = Color.FromArgb(  128,   255,   128);
+            textBox4.BackColor = Color.FromArgb(128, 255, 128);
             textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox4.Location = new Point(809, 56);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
@@ -193,7 +195,7 @@
             // 
             // championBtn
             // 
-            championBtn.BackColor = Color.FromArgb(  128,   255,   128);
+            championBtn.BackColor = Color.FromArgb(128, 255, 128);
             championBtn.FlatStyle = FlatStyle.Popup;
             championBtn.Location = new Point(809, 163);
             championBtn.Name = "championBtn";
@@ -206,9 +208,9 @@
             // 
             // randomChampionResultTextbox
             // 
-            randomChampionResultTextbox.BackColor = Color.FromArgb(  128,   255,   128);
+            randomChampionResultTextbox.BackColor = Color.FromArgb(128, 255, 128);
             randomChampionResultTextbox.BorderStyle = BorderStyle.FixedSingle;
-            randomChampionResultTextbox.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            randomChampionResultTextbox.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             randomChampionResultTextbox.Location = new Point(809, 114);
             randomChampionResultTextbox.Multiline = true;
             randomChampionResultTextbox.Name = "randomChampionResultTextbox";
@@ -226,9 +228,9 @@
             // 
             // textBox5
             // 
-            textBox5.BackColor = Color.FromArgb(  255,   255,   128);
+            textBox5.BackColor = Color.FromArgb(255, 255, 128);
             textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox5.Location = new Point(809, 251);
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
@@ -239,9 +241,9 @@
             // 
             // rndRoleTextbox
             // 
-            rndRoleTextbox.BackColor = Color.FromArgb(  255,   255,   128);
+            rndRoleTextbox.BackColor = Color.FromArgb(255, 255, 128);
             rndRoleTextbox.BorderStyle = BorderStyle.FixedSingle;
-            rndRoleTextbox.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point,  0);
+            rndRoleTextbox.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rndRoleTextbox.Location = new Point(809, 280);
             rndRoleTextbox.Multiline = true;
             rndRoleTextbox.Name = "rndRoleTextbox";
@@ -252,7 +254,7 @@
             // 
             // generateRoleBtn
             // 
-            generateRoleBtn.BackColor = Color.FromArgb(  255,   255,   128);
+            generateRoleBtn.BackColor = Color.FromArgb(255, 255, 128);
             generateRoleBtn.FlatStyle = FlatStyle.Popup;
             generateRoleBtn.Location = new Point(809, 329);
             generateRoleBtn.Name = "generateRoleBtn";
@@ -266,7 +268,7 @@
             // randomTeamAndChapmionBtn
             // 
             randomTeamAndChapmionBtn.BackColor = Color.Transparent;
-            randomTeamAndChapmionBtn.Location = new Point(507, 526);
+            randomTeamAndChapmionBtn.Location = new Point(499, 524);
             randomTeamAndChapmionBtn.Name = "randomTeamAndChapmionBtn";
             randomTeamAndChapmionBtn.Size = new Size(126, 49);
             randomTeamAndChapmionBtn.TabIndex = 26;
@@ -274,12 +276,12 @@
             randomTeamAndChapmionBtn.UseVisualStyleBackColor = false;
             randomTeamAndChapmionBtn.Click += teamAndChampionBtn_Click;
             // 
-            // Form1
+            // LeagueCustomGenerator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            BackgroundImage = Properties.Resources.League_map;
+            BackgroundImage = Resources.League_map;
             ClientSize = new Size(966, 655);
             Controls.Add(randomTeamAndChapmionBtn);
             Controls.Add(generateRoleBtn);
